@@ -9,14 +9,34 @@ export default {
     		fontFamily: {
     			sans: [
     				'Inter',
-    				'ui-sans-serif',
     				'system-ui',
-    				'sans-serif',
-    				'Apple Color Emoji',
-    				'Segoe UI Emoji',
-    				'Segoe UI Symbol',
-    				'Noto Color Emoji'
+    				'-apple-system',
+    				'BlinkMacSystemFont',
+    				'Segoe UI',
+    				'Roboto',
+    				'Helvetica Neue',
+    				'Arial',
+    				'sans-serif'
+    			],
+    			display: [
+    				'Inter',
+    				'system-ui',
+    				'sans-serif'
+    			],
+    			mono: [
+    				'JetBrains Mono',
+    				'Menlo',
+    				'Monaco',
+    				'Consolas',
+    				'Liberation Mono',
+    				'Courier New',
+    				'monospace'
     			]
+    		},
+    		fontSize: {
+    			'display-large': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+    			'display': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+    			'display-small': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
     		},
     		borderRadius: {
     			lg: 'var(--radius)',
@@ -24,7 +44,11 @@ export default {
     			sm: 'calc(var(--radius) - 4px)'
     		},
             container: {
-                center: true
+                center: true,
+                padding: "2rem",
+                screens: {
+                    "2xl": "1400px",
+                }
             },
     		colors: {
     			background: 'hsl(var(--background))',
@@ -76,6 +100,30 @@ export default {
     				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
     				border: 'hsl(var(--sidebar-border))',
     				ring: 'hsl(var(--sidebar-ring))'
+    			}
+    		},
+    		animation: {
+    			"fade-in": "fade-in 0.5s ease-in-out",
+    			"fade-out": "fade-out 0.5s ease-in-out",
+    			"slide-in": "slide-in 0.5s ease-out",
+    			"slide-out": "slide-out 0.5s ease-in",
+    		},
+    		keyframes: {
+    			"fade-in": {
+    				"0%": { opacity: "0" },
+    				"100%": { opacity: "1" }
+    			},
+    			"fade-out": {
+    				"0%": { opacity: "1" },
+    				"100%": { opacity: "0" }
+    			},
+    			"slide-in": {
+    				"0%": { transform: "translateX(-100%)" },
+    				"100%": { transform: "translateX(0)" }
+    			},
+    			"slide-out": {
+    				"0%": { transform: "translateX(0)" },
+    				"100%": { transform: "translateX(100%)" }
     			}
     		}
     	}

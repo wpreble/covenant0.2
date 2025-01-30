@@ -34,9 +34,11 @@ export default function Home() {
                         </CardHeader>
                         <CardContent>
                             <div className="rounded-md bg-muted aspect-square w-full grid place-items-center">
-                                <div className="text-6xl font-bold uppercase">
-                                    {formatAgentName(agent?.name)}
-                                </div>
+                                <img
+                                    src={agent.name === "michael" ? "/avatars/michaelprofile.png" : "/covlogo-white.png"}
+                                    alt={agent.name}
+                                    className="w-full h-full object-cover rounded-md"
+                                />
                             </div>
                         </CardContent>
                         <CardFooter>

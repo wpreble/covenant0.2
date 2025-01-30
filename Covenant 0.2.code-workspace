@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+    ],
+    "settings": {
+        "javascript.format.enable": false,
+        "typescript.format.enable": false,
+        "files.associations": {
+            "*.css": "tailwindcss"
+        }
+    }
+}

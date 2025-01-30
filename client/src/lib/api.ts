@@ -59,11 +59,7 @@ const fetcher = async ({
 };
 
 export const apiClient = {
-    sendMessage: (
-        agentId: string,
-        message: string,
-        selectedFile?: File | null
-    ) => {
+    async sendMessage(agentId: string, message: string, selectedFile?: File | null) {
         const formData = new FormData();
         formData.append("text", message);
         formData.append("user", "user");
@@ -77,11 +73,25 @@ export const apiClient = {
             body: formData,
         });
     },
-    getAgents: () => fetcher({ url: "/agents" }),
-    getAgent: (agentId: string): Promise<{ id: UUID; character: Character }> =>
-        fetcher({ url: `/agents/${agentId}` }),
-    tts: (agentId: string, text: string) =>
-        fetcher({
+
+    async getMessages(agentId: string) {
+        const response = await fetch(`/api/agents/${agentId}/messages`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch messages');
+        }
+        return response.json();
+    },
+
+    async getAgents() {
+        return fetcher({ url: "/agents" });
+    },
+
+    async getAgent(agentId: string): Promise<{ id: UUID; character: Character }> {
+        return fetcher({ url: `/agents/${agentId}` });
+    },
+
+    async tts(agentId: string, text: string) {
+        return fetcher({
             url: `/${agentId}/tts`,
             method: "POST",
             body: {
@@ -92,8 +102,10 @@ export const apiClient = {
                 Accept: "audio/mpeg",
                 "Transfer-Encoding": "chunked",
             },
-        }),
-    whisper: async (agentId: string, audioBlob: Blob) => {
+        });
+    },
+
+    async whisper(agentId: string, audioBlob: Blob) {
         const formData = new FormData();
         formData.append("file", audioBlob, "recording.wav");
         return fetcher({

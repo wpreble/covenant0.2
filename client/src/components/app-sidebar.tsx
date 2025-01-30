@@ -30,24 +30,25 @@ export function AppSidebar() {
     const agents = query?.data?.agents;
 
     return (
-        <Sidebar>
-            <SidebarHeader>
+        <Sidebar className="bg-black border-r border-white/10">
+            <SidebarHeader className="border-b border-white/10">
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <SidebarMenuButton size="lg" asChild>
+                        <SidebarMenuButton size="lg" asChild className="hover:bg-white/5">
                             <NavLink to="/">
                                 <img
-                                    src="/elizaos-icon.png"
+                                    src="/covlogo-white.png"
                                     width="100%"
                                     height="100%"
-                                    className="size-7"
+                                    className="size-8"
                                 />
-
                                 <div className="flex flex-col gap-0.5 leading-none">
-                                    <span className="font-semibold">
-                                        ElizaOS
+                                    <span className="font-display text-lg tracking-tight">
+                                        COVENANT
                                     </span>
-                                    <span className="">v{info?.version}</span>
+                                    <span className="text-xs text-white/60 uppercase tracking-widest">
+                                        v0.2
+                                    </span>
                                 </div>
                             </NavLink>
                         </SidebarMenuButton>
@@ -56,62 +57,60 @@ export function AppSidebar() {
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Agents</SidebarGroupLabel>
+                    <SidebarGroupLabel className="text-white/40 uppercase tracking-widest text-xs font-medium">
+                        Agents
+                    </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {query?.isPending ? (
-                                <div>
-                                    {Array.from({ length: 5 }).map(
-                                        (_, index) => (
-                                            <SidebarMenuItem key={index}>
-                                                <SidebarMenuSkeleton />
-                                            </SidebarMenuItem>
-                                        )
-                                    )}
+                                <div className="space-y-1">
+                                    {Array.from({ length: 5 }).map((_, index) => (
+                                        <SidebarMenuItem key={index}>
+                                            <SidebarMenuSkeleton className="bg-white/5" />
+                                        </SidebarMenuItem>
+                                    ))}
                                 </div>
                             ) : (
-                                <div>
-                                    {agents?.map(
-                                        (agent: { id: UUID; name: string }) => (
-                                            <SidebarMenuItem key={agent.id}>
-                                                <NavLink
-                                                    to={`/chat/${agent.id}`}
+                                <div className="space-y-1">
+                                    {agents?.map((agent: { id: UUID; name: string }) => (
+                                        <SidebarMenuItem key={agent.id}>
+                                            <NavLink to={`/chat/${agent.id}`}>
+                                                <SidebarMenuButton
+                                                    isActive={location.pathname.includes(agent.id)}
+                                                    className="hover:bg-white/5 transition-colors"
                                                 >
-                                                    <SidebarMenuButton
-                                                        isActive={location.pathname.includes(
-                                                            agent.id
-                                                        )}
-                                                    >
-                                                        <User />
-                                                        <span>
-                                                            {agent.name}
-                                                        </span>
-                                                    </SidebarMenuButton>
-                                                </NavLink>
-                                            </SidebarMenuItem>
-                                        )
-                                    )}
+                                                    <img
+                                                        src={agent.name === "michael" ? "/avatars/michaelprofile.png" : "/covlogo-white.png"}
+                                                        className="size-4 rounded-full ring-1 ring-white/10"
+                                                        alt={agent.name}
+                                                    />
+                                                    <span className="capitalize">
+                                                        {agent.name}
+                                                    </span>
+                                                </SidebarMenuButton>
+                                            </NavLink>
+                                        </SidebarMenuItem>
+                                    ))}
                                 </div>
                             )}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter>
+            <SidebarFooter className="border-t border-white/10">
                 <SidebarMenu>
                     <SidebarMenuItem>
-                        <NavLink
-                            to="https://elizaos.github.io/eliza/docs/intro/"
-                            target="_blank"
-                        >
-                            <SidebarMenuButton>
-                                <Book /> Documentation
+                        <NavLink to="https://covenantprotocol.com" target="_blank">
+                            <SidebarMenuButton className="hover:bg-white/5 transition-colors">
+                                <Book className="opacity-60" />
+                                <span>Website</span>
                             </SidebarMenuButton>
                         </NavLink>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <SidebarMenuButton disabled>
-                            <Cog /> Settings
+                        <SidebarMenuButton disabled className="opacity-40">
+                            <Cog />
+                            <span>Settings</span>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <ConnectionStatus />

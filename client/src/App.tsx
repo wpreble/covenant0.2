@@ -23,7 +23,7 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <div
-                className="dark antialiased"
+                className="dark antialiased bg-black text-white min-h-screen"
                 style={{
                     colorScheme: "dark",
                 }}
@@ -33,7 +33,8 @@ function App() {
                         <SidebarProvider>
                             <AppSidebar />
                             <SidebarInset>
-                                <div className="flex flex-1 flex-col gap-4 size-full container">
+                                <div className="flex flex-1 flex-col gap-4 size-full container animate-fade-in">
+                                    <div className="fixed inset-0 bg-gradient-to-b from-black/50 to-black pointer-events-none" />
                                     <Routes>
                                         <Route path="/" element={<Home />} />
                                         <Route
