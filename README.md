@@ -1,7 +1,7 @@
 # Covenant Protocol
 
 <div align="center">
-  <img src="public/covlogo-white.png" alt="Covenant Protocol Logo" width="200"/>
+  <img src="client/public/covlogo-white.png" alt="Covenant Protocol Logo" width="200"/>
   <h3>AI Agent Ecosystem for Digital Sovereignty</h3>
   <p><i>Built on ElizaOS Framework</i></p>
 </div>
@@ -9,6 +9,16 @@
 ## About
 
 Covenant is an AI Agent ecosystem built for digital sovereignty. It empowers individuals, businesses, and communities to create and own AI agents that are fully aligned with their true interests—not those of corporations or governments.
+
+## Built on ElizaOS
+
+Covenant Protocol is proudly built on the ElizaOS agent framework. We are incredibly grateful to the ElizaOS community for their groundbreaking work in creating an open-source foundation for AI agents. Their framework has provided us with a robust and flexible architecture that makes sophisticated AI applications possible.
+
+While ElizaOS provides the powerful underlying framework, Covenant Protocol aims to take this technology to the mainstream by creating an accessible, user-friendly application layer. Our goal is to bridge the gap between the technical capabilities of ElizaOS and everyday users who can benefit from sovereign AI agents.
+
+We believe that by building on ElizaOS, we can focus on what we do best: creating intuitive interfaces, developing user-centric features, and making digital sovereignty accessible to everyone. This stands on the shoulders of the excellent work done by the ElizaOS community.
+
+For more information about ElizaOS, visit [elizaos.github.io/eliza](https://elizaos.github.io/eliza/).
 
 ### Why AI Alignment Matters
 
@@ -26,7 +36,7 @@ Covenant ensures that your AI works for you, and only you. By leveraging open-so
 ## Introducing Michxl
 
 <div align="center">
-  <img src="public/avatars/michaelprofile.png" alt="Michxl" width="150" style="border-radius: 50%"/>
+  <img src="client/public/avatars/michaelprofile.png" alt="Michxl" width="150" style="border-radius: 50%"/>
 </div>
 
 The flagship Covenant Agent is a personal assistant named Michxl. Michxl is not just a generic chatbot, but a "Jarvis" like digital guardian.
