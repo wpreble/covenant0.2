@@ -10,6 +10,16 @@
 
 Covenant is an AI Agent ecosystem built for digital sovereignty. It empowers individuals, businesses, and communities to create and own AI agents that are fully aligned with their true interests—not those of corporations or governments.
 
+## Built on ElizaOS
+
+Covenant Protocol is proudly built on the ElizaOS agent framework. We are incredibly grateful to the ElizaOS community for their groundbreaking work in creating an open-source foundation for AI agents. Their framework has provided us with a robust and flexible architecture that makes sophisticated AI applications possible.
+
+While ElizaOS provides the powerful underlying framework, Covenant Protocol aims to take this technology to the mainstream by creating an accessible, user-friendly application layer. Our goal is to bridge the gap between the technical capabilities of ElizaOS and everyday users who can benefit from sovereign AI agents.
+
+We believe that by building on ElizaOS, we can focus on what we do best: creating intuitive interfaces, developing user-centric features, and making digital sovereignty accessible to everyone. This stands on the shoulders of the excellent work done by the ElizaOS community.
+
+For more information about ElizaOS, visit [elizaos.github.io/eliza](https://elizaos.github.io/eliza/).
+
 ### Why AI Alignment Matters
 
 Social media reshaped how we see the world, often at the cost of our autonomy. AI will go even further—it won't just filter reality; it will become an extension of our mind.
